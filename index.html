@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Printworx Global | Creative Design Studio</title>
+
+<title>PrintworxCY | Digital Design Studio</title>
+
+<meta name="description" content="PrintworxCY creates professional digital graphic designs, social media content, promotional posters, digital menus and branding for businesses worldwide.">
 
 <style>
 * {
@@ -12,152 +15,234 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background: #ffffff;
-    color: #171717;
+    background: #101010;
+    color: #fff;
+    line-height: 1.6;
 }
 
 header {
-    padding: 25px 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #eee;
+    padding: 24px 8%;
+    background: #151515;
 }
 
 .logo {
     font-size: 27px;
-    font-weight: 800;
+    font-weight: 900;
+    letter-spacing: 1px;
 }
 
-.logo span {
-    color: #7047eb;
+.logo span,
+.highlight {
+    color: #ff6b24;
 }
 
 nav a {
+    color: #fff;
     text-decoration: none;
-    color: #333;
     margin-left: 25px;
     font-size: 14px;
 }
 
+nav a:hover {
+    color: #ff6b24;
+}
+
 .hero {
-    padding: 110px 8%;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    background: #f8f7fc;
+    padding: 80px 20px;
+    background:
+    radial-gradient(circle at top right, #382016, transparent 40%),
+    linear-gradient(135deg, #111, #202020);
+}
+
+.hero-label {
+    color: #ff6b24;
+    letter-spacing: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 25px;
 }
 
 .hero h1 {
-    font-size: clamp(38px, 7vw, 68px);
-    max-width: 850px;
-    margin: auto;
-    line-height: 1.1;
-}
-
-.hero h1 span {
-    color: #7047eb;
+    font-size: clamp(42px, 8vw, 78px);
+    line-height: 1.08;
+    font-weight: 900;
+    margin-bottom: 25px;
 }
 
 .hero p {
-    margin: 25px auto;
-    color: #666;
+    max-width: 650px;
+    color: #c5c5c5;
     font-size: 18px;
-    max-width: 600px;
-    line-height: 1.6;
+    margin-bottom: 35px;
 }
 
 .button {
     display: inline-block;
-    background: #7047eb;
-    color: white;
-    padding: 16px 30px;
-    border-radius: 8px;
+    background: #ff6b24;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 5px;
     text-decoration: none;
-    margin-top: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #e65310;
+    transform: translateY(-3px);
 }
 
 section {
-    padding: 80px 8%;
+    padding: 85px 8%;
 }
 
 .section-title {
     text-align: center;
-    font-size: 36px;
-    margin-bottom: 45px;
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #aaa;
+    margin: 0 auto 50px;
+    max-width: 650px;
 }
 
 .services {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 22px;
 }
 
-.card {
+.service-card {
+    background: #1c1c1c;
+    border: 1px solid #303030;
+    border-radius: 10px;
     padding: 30px;
-    border: 1px solid #eee;
-    border-radius: 12px;
     transition: 0.3s;
 }
 
-.card:hover {
+.service-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px #0000000c;
+    border-color: #ff6b24;
 }
 
-.card h3 {
+.icon {
+    font-size: 35px;
+    margin-bottom: 18px;
+}
+
+.service-card h3 {
+    color: #ff6b24;
     font-size: 21px;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
-.price {
-    font-size: 28px;
-    font-weight: bold;
-    color: #7047eb;
-    margin-top: 20px;
-}
-
-.price small {
-    font-size: 13px;
-    color: #777;
-    font-weight: normal;
+.service-card p {
+    color: #bbb;
+    font-size: 15px;
 }
 
 .about {
-    background: #f8f7fc;
+    background: #191919;
     text-align: center;
 }
 
 .about p {
-    max-width: 700px;
+    max-width: 780px;
     margin: auto;
-    line-height: 1.8;
-    color: #666;
+    color: #bbb;
+    font-size: 17px;
+}
+
+.process {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    text-align: center;
+}
+
+.step {
+    background: #1c1c1c;
+    padding: 30px 20px;
+    border-radius: 8px;
+}
+
+.step-number {
+    color: #ff6b24;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.step h3 {
+    margin: 10px 0;
+}
+
+.step p {
+    color: #aaa;
+    font-size: 14px;
 }
 
 .contact {
     text-align: center;
+    background: #191919;
+}
+
+.contact p {
+    color: #bbb;
+    margin-bottom: 25px;
+}
+
+.email {
+    display: block;
+    color: #ff6b24;
+    font-size: 21px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 25px;
 }
 
 footer {
-    background: #171717;
-    color: white;
-    padding: 35px;
     text-align: center;
+    padding: 25px;
+    background: #080808;
+    color: #888;
     font-size: 13px;
 }
 
-@media(max-width:600px) {
-    nav {
-        display: none;
+@media(max-width: 700px) {
+    header {
+        flex-direction: column;
+        gap: 18px;
     }
 
-    .hero {
-        padding: 75px 6%;
+    nav a {
+        margin: 0 8px;
+        font-size: 13px;
     }
 
     section {
-        padding: 60px 6%;
+        padding: 65px 6%;
+    }
+
+    .hero {
+        min-height: 500px;
     }
 }
 </style>
@@ -166,110 +251,207 @@ footer {
 <body>
 
 <header>
-    <div class="logo">PRINTWORX<span>.</span></div>
+    <div class="logo">PRINTWORX<span>CY</span></div>
+
     <nav>
+        <a href="#home">Home</a>
         <a href="#services">Services</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
 
-<div class="hero">
-    <h1>Creative Design.<br><span>Global Impact.</span></h1>
+<main>
+
+<section class="hero" id="home">
+
+    <div class="hero-label">DIGITAL DESIGN STUDIO</div>
+
+    <h1>
+        YOUR BRAND.<br>
+        <span class="highlight">OUR DESIGN.</span>
+    </h1>
 
     <p>
-        Professional graphic design solutions for businesses
-        around the world. Your brand deserves to stand out.
+        Creative digital designs that help businesses
+        stand out, attract customers and grow online.
     </p>
 
-    <a href="#services" class="button">Explore Our Services</a>
-</div>
+    <a class="button"
+       href="mailto:info@printworxcy.com?subject=Design%20Enquiry">
+       START YOUR PROJECT
+    </a>
+
+</section>
 
 <section id="services">
-    <h2 class="section-title">Our Services</h2>
+
+    <h2 class="section-title">OUR SERVICES</h2>
+
+    <p class="section-subtitle">
+        Digital design solutions created for modern businesses.
+    </p>
 
     <div class="services">
 
-        <div class="card">
-            <h3>Logo Design</h3>
-            <p>Professional and memorable logo creation.</p>
-            <div class="price">€100</div>
+        <div class="service-card">
+            <div class="icon">📱</div>
+            <h3>Social Media Design</h3>
+            <p>
+                Professional designs for Instagram, Facebook
+                and other social media platforms.
+            </p>
         </div>
 
-        <div class="card">
-            <h3>Brand Identity</h3>
-            <p>Complete visual identity for your business.</p>
-            <div class="price">€250</div>
+        <div class="service-card">
+            <div class="icon">🎨</div>
+            <h3>Promotional Posters</h3>
+            <p>
+                Eye-catching digital posters for special offers,
+                promotions, events and announcements.
+            </p>
         </div>
 
-        <div class="card">
-            <h3>Business Cards</h3>
-            <p>Modern and professional business card design.</p>
-            <div class="price">€40</div>
+        <div class="service-card">
+            <div class="icon">🍽️</div>
+            <h3>Digital Menus</h3>
+            <p>
+                Modern digital menus for restaurants,
+                cafés, bars and hospitality businesses.
+            </p>
         </div>
 
-        <div class="card">
-            <h3>Flyer Design</h3>
-            <p>Creative promotional flyers for your business.</p>
-            <div class="price">€50</div>
+        <div class="service-card">
+            <div class="icon">🏪</div>
+            <h3>Business Promotions</h3>
+            <p>
+                Creative promotional graphics for shops,
+                retail stores and businesses.
+            </p>
         </div>
 
-        <div class="card">
-            <h3>Social Media</h3>
-            <p>Professional graphics for your social platforms.</p>
-            <div class="price">€100</div>
+        <div class="service-card">
+            <div class="icon">💻</div>
+            <h3>Digital Banners</h3>
+            <p>
+                Professional banners, social media covers
+                and advertising graphics.
+            </p>
         </div>
 
-        <div class="card">
-            <h3>Packaging Design</h3>
-            <p>Unique packaging concepts for your products.</p>
-            <div class="price">€150</div>
+        <div class="service-card">
+            <div class="icon">✨</div>
+            <h3>Logo & Branding</h3>
+            <p>
+                Logo design and visual identity
+                to give your business a professional image.
+            </p>
         </div>
 
-        <div class="card">
-            <h3>Menu Design</h3>
-            <p>Beautiful menus for restaurants and cafes.</p>
-            <div class="price">€70</div>
+        <div class="service-card">
+            <div class="icon">📄</div>
+            <h3>Digital Flyers</h3>
+            <p>
+                Digital flyers, invitations and promotional
+                materials ready to share online.
+            </p>
         </div>
 
-        <div class="card">
-            <h3>T-Shirt Design</h3>
-            <p>Custom artwork and apparel graphics.</p>
-            <div class="price">€60</div>
+        <div class="service-card">
+            <div class="icon">📢</div>
+            <h3>Advertising Creatives</h3>
+            <p>
+                Custom graphics for online advertising
+                campaigns and business promotions.
+            </p>
         </div>
 
     </div>
 
-    <p style="text-align:center;color:#777;margin-top:30px;font-size:13px;">
-        Prices in EUR, excluding VAT. Cyprus VAT of 19% applies where legally applicable.
-        International VAT treatment depends on the customer and transaction.
-    </p>
 </section>
 
 <section class="about" id="about">
-    <h2 class="section-title">Design Without Borders</h2>
+
+    <h2 class="section-title">
+        DESIGN THAT MAKES AN IMPACT
+    </h2>
 
     <p>
-        We help businesses, startups, restaurants and brands
-        build a strong visual identity through creative design.
-        From logos to packaging, we deliver professional
-        design solutions wherever you are in the world.
+        PrintworxCY is a digital graphic design studio
+        focused on helping businesses communicate visually.
+        We create digital content for shops, restaurants,
+        cafés, hotels and brands around the world.
+
+        Every project is designed to match your business,
+        your audience and your goals.
     </p>
+
+</section>
+
+<section>
+
+    <h2 class="section-title">HOW IT WORKS</h2>
+
+    <p class="section-subtitle">
+        A simple process from your idea to the final design.
+    </p>
+
+    <div class="process">
+
+        <div class="step">
+            <div class="step-number">01</div>
+            <h3>Contact Us</h3>
+            <p>Tell us about your business and what you need.</p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">02</div>
+            <h3>Get a Quote</h3>
+            <p>Receive a personalised quotation for your project.</p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">03</div>
+            <h3>Design</h3>
+            <p>We create your design based on your requirements.</p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">04</div>
+            <h3>Digital Delivery</h3>
+            <p>Receive your completed digital design files.</p>
+        </div>
+
+    </div>
+
 </section>
 
 <section class="contact" id="contact">
-    <h2 class="section-title">Let's Work Together</h2>
 
-    <p>Have a project in mind? Let's talk.</p>
+    <h2 class="section-title">LET'S CREATE SOMETHING GREAT</h2>
+
+    <p>
+        Have an idea or need a design for your business?
+        Get in touch with us.
+    </p>
+
+    <a class="email" href="mailto:info@printworxcy.com">
+        info@printworxcy.com
+    </a>
 
     <a class="button"
-       href="mailto:info@printworxcy.com">
-       Contact Our Team
+       href="mailto:info@printworxcy.com?subject=New%20Design%20Project">
+       CONTACT US
     </a>
+
 </section>
 
+</main>
+
 <footer>
-    © 2026 Printworx Global. All rights reserved.
+    © 2026 PrintworxCY. All Rights Reserved.
+    <br>
+    Digital Graphic Design Studio
 </footer>
 
 </body>
