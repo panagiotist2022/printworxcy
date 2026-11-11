@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Printworx Global | Creative Design Studio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    color: #171717;
+}
+
+header {
+    padding: 25px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: #7047eb;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 25px;
+    font-size: 14px;
+}
+
+.hero {
+    padding: 110px 8%;
+    text-align: center;
+    background: #f8f7fc;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 7vw, 68px);
+    max-width: 850px;
+    margin: auto;
+    line-height: 1.1;
+}
+
+.hero h1 span {
+    color: #7047eb;
+}
+
+.hero p {
+    margin: 25px auto;
+    color: #666;
+    font-size: 18px;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+.button {
+    display: inline-block;
+    background: #7047eb;
+    color: white;
+    padding: 16px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 15px;
+}
+
+section {
+    padding: 80px 8%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 45px;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    padding: 30px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px #0000000c;
+}
+
+.card h3 {
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 28px;
+    font-weight: bold;
+    color: #7047eb;
+    margin-top: 20px;
+}
+
+.price small {
+    font-size: 13px;
+    color: #777;
+    font-weight: normal;
+}
+
+.about {
+    background: #f8f7fc;
+    text-align: center;
+}
+
+.about p {
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.8;
+    color: #666;
+}
+
+.contact {
+    text-align: center;
+}
+
+footer {
+    background: #171717;
+    color: white;
+    padding: 35px;
+    text-align: center;
+    font-size: 13px;
+}
+
+@media(max-width:600px) {
+    nav {
+        display: none;
+    }
+
+    .hero {
+        padding: 75px 6%;
+    }
+
+    section {
+        padding: 60px 6%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">PRINTWORX<span>.</span></div>
+    <nav>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <h1>Creative Design.<br><span>Global Impact.</span></h1>
+
+    <p>
+        Professional graphic design solutions for businesses
+        around the world. Your brand deserves to stand out.
+    </p>
+
+    <a href="#services" class="button">Explore Our Services</a>
+</div>
+
+<section id="services">
+    <h2 class="section-title">Our Services</h2>
+
+    <div class="services">
+
+        <div class="card">
+            <h3>Logo Design</h3>
+            <p>Professional and memorable logo creation.</p>
+            <div class="price">€100</div>
+        </div>
+
+        <div class="card">
+            <h3>Brand Identity</h3>
+            <p>Complete visual identity for your business.</p>
+            <div class="price">€250</div>
+        </div>
+
+        <div class="card">
+            <h3>Business Cards</h3>
+            <p>Modern and professional business card design.</p>
+            <div class="price">€40</div>
+        </div>
+
+        <div class="card">
+            <h3>Flyer Design</h3>
+            <p>Creative promotional flyers for your business.</p>
+            <div class="price">€50</div>
+        </div>
+
+        <div class="card">
+            <h3>Social Media</h3>
+            <p>Professional graphics for your social platforms.</p>
+            <div class="price">€100</div>
+        </div>
+
+        <div class="card">
+            <h3>Packaging Design</h3>
+            <p>Unique packaging concepts for your products.</p>
+            <div class="price">€150</div>
+        </div>
+
+        <div class="card">
+            <h3>Menu Design</h3>
+            <p>Beautiful menus for restaurants and cafes.</p>
+            <div class="price">€70</div>
+        </div>
+
+        <div class="card">
+            <h3>T-Shirt Design</h3>
+            <p>Custom artwork and apparel graphics.</p>
+            <div class="price">€60</div>
+        </div>
+
+    </div>
+
+    <p style="text-align:center;color:#777;margin-top:30px;font-size:13px;">
+        Prices in EUR, excluding VAT. Cyprus VAT of 19% applies where legally applicable.
+        International VAT treatment depends on the customer and transaction.
+    </p>
+</section>
+
+<section class="about" id="about">
+    <h2 class="section-title">Design Without Borders</h2>
+
+    <p>
+        We help businesses, startups, restaurants and brands
+        build a strong visual identity through creative design.
+        From logos to packaging, we deliver professional
+        design solutions wherever you are in the world.
+    </p>
+</section>
+
+<section class="contact" id="contact">
+    <h2 class="section-title">Let's Work Together</h2>
+
+    <p>Have a project in mind? Let's talk.</p>
+
+    <a class="button"
+       href="mailto:info@printworxcy.com">
+       Contact Our Team
+    </a>
+</section>
+
+<footer>
+    © 2026 Printworx Global. All rights reserved.
+</footer>
+
+</body>
+</html>
