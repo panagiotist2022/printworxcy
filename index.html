@@ -1,504 +1,1001 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090909">
+  <meta name="description" content="Printworx is a creative digital design studio delivering branding, graphic design, social media and visual solutions worldwide.">
+  <title>Printworx | Creative Digital Design Studio</title>
 
-<title>PrintworxCY | Digital Design Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<meta name="description" content="Premium digital graphic design, branding, social media design, digital menus and advertising for businesses worldwide.">
+  <style>
+    :root {
+      --bg: #090909;
+      --surface: #111111;
+      --gold: #c9a45c;
+      --gold-light: #e2c17d;
+      --white: #f7f5f0;
+      --muted: #a4a09a;
+      --border: rgba(255,255,255,.10);
+    }
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-html {
-    scroll-behavior: smooth;
-}
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #101010;
-    color: #fff;
-    line-height: 1.6;
-}
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      line-height: 1.6;
+    }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 25px 8%;
-    background: #111;
-    border-bottom: 1px solid #292929;
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-.logo {
-    font-size: 27px;
-    font-weight: 900;
-    letter-spacing: 1px;
-}
+    button {
+      font: inherit;
+    }
 
-.logo span {
-    color: #c9a96a;
-}
+    .container {
+      width: min(1160px, 90%);
+      margin: auto;
+    }
 
-nav a {
-    color: #fff;
-    text-decoration: none;
-    margin-left: 25px;
-    font-size: 14px;
-}
+    .gold {
+      color: var(--gold);
+    }
 
-nav a:hover {
-    color: #c9a96a;
-}
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
 
-.hero {
-    min-height: 650px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 80px 20px;
-    background: linear-gradient(135deg, #101010, #252019);
-}
+    h1, h2, h3 {
+      font-family: 'Manrope', sans-serif;
+      line-height: 1.12;
+    }
 
-.label {
-    color: #c9a96a;
-    letter-spacing: 5px;
-    font-size: 13px;
-    margin-bottom: 25px;
-}
+    h2 {
+      font-size: clamp(32px, 5vw, 52px);
+      letter-spacing: -1.8px;
+    }
 
-.hero h1 {
-    font-size: clamp(45px, 8vw, 85px);
-    line-height: 1.1;
-    margin-bottom: 25px;
-}
+    p {
+      color: var(--muted);
+    }
 
-.gold {
-    color: #c9a96a;
-}
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 24px;
+      border: 1px solid var(--gold);
+      background: var(--gold);
+      color: #090909;
+      font-weight: 700;
+      font-size: 13px;
+      transition: .25s ease;
+      cursor: pointer;
+    }
 
-.hero p {
-    max-width: 650px;
-    color: #bbb;
-    font-size: 18px;
-    margin-bottom: 35px;
-}
+    .btn:hover {
+      background: var(--gold-light);
+      border-color: var(--gold-light);
+      transform: translateY(-2px);
+    }
 
-.button {
-    display: inline-block;
-    background: #c9a96a;
-    color: #111;
-    padding: 15px 32px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 3px;
-    transition: 0.3s;
-}
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,.3);
+    }
 
-.button:hover {
-    background: #e3c58a;
-    transform: translateY(-3px);
-}
+    .btn-outline:hover {
+      background: var(--gold);
+      color: #090909;
+      border-color: var(--gold);
+    }
 
-section {
-    padding: 90px 8%;
-}
+    /* NAVIGATION */
 
-.section-title {
-    text-align: center;
-    font-size: 42px;
-    margin-bottom: 15px;
-}
-
-.section-subtitle {
-    text-align: center;
-    color: #aaa;
-    max-width: 650px;
-    margin: 0 auto 55px;
-}
-
-.services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 22px;
-}
-
-.service-card {
-    background: #1b1b1b;
-    padding: 32px;
-    border: 1px solid #333;
-    transition: 0.3s;
-}
-
-.service-card:hover {
-    border-color: #c9a96a;
-    transform: translateY(-5px);
-}
-
-.service-card h3 {
-    color: #c9a96a;
-    font-size: 21px;
-    margin-bottom: 12px;
-}
-
-.service-card p {
-    color: #aaa;
-    font-size: 15px;
-}
-
-.icon {
-    font-size: 32px;
-    margin-bottom: 15px;
-}
-
-/* PORTFOLIO */
-
-.portfolio {
-    background: #171717;
-}
-
-.portfolio-card {
-    max-width: 1050px;
-    margin: auto;
-    background: #202020;
-    border: 1px solid #39332a;
-}
-
-.portfolio-card img {
-    width: 100%;
-    display: block;
-    height: auto;
-}
-
-.portfolio-info {
-    padding: 35px;
-}
-
-.portfolio-info .category {
-    color: #c9a96a;
-    font-size: 12px;
-    letter-spacing: 3px;
-    margin-bottom: 12px;
-}
-
-.portfolio-info h3 {
-    font-size: 32px;
-    margin-bottom: 12px;
-}
-
-.portfolio-info p {
-    color: #aaa;
-    max-width: 700px;
-}
-
-.about {
-    text-align: center;
-}
-
-.about p {
-    max-width: 780px;
-    margin: auto;
-    color: #aaa;
-    font-size: 17px;
-}
-
-.process {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    gap: 20px;
-}
-
-.step {
-    background: #1b1b1b;
-    padding: 30px;
-    text-align: center;
-}
-
-.step-number {
-    color: #c9a96a;
-    font-size: 35px;
-    font-weight: bold;
-}
-
-.step h3 {
-    margin: 12px 0;
-}
-
-.step p {
-    color: #aaa;
-    font-size: 14px;
-}
-
-.contact {
-    background: #1b1b1b;
-    text-align: center;
-}
-
-.contact p {
-    color: #aaa;
-    margin-bottom: 25px;
-}
-
-.email {
-    display: block;
-    color: #c9a96a;
-    font-size: 21px;
-    margin-bottom: 25px;
-    text-decoration: none;
-}
-
-footer {
-    text-align: center;
-    padding: 30px;
-    color: #888;
-    background: #090909;
-    font-size: 13px;
-}
-
-@media(max-width: 700px) {
     header {
-        flex-direction: column;
-        gap: 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(9,9,9,.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
     }
 
-    nav a {
-        margin: 0 8px;
-        font-size: 13px;
+    .navbar {
+      min-height: 78px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    section {
-        padding: 65px 6%;
+    .logo {
+      font-family: 'Manrope', sans-serif;
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: -1px;
     }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      color: #d0cec9;
+      transition: .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-links .nav-contact {
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 10px 16px;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      color: white;
+      border: 0;
+      font-size: 27px;
+      cursor: pointer;
+    }
+
+    /* HERO */
 
     .hero {
-        min-height: 550px;
+      min-height: 760px;
+      display: flex;
+      align-items: center;
+      padding: 150px 0 100px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 80% 45%, rgba(201,164,92,.12), transparent 38%),
+        linear-gradient(120deg, #090909 50%, #11100d 100%);
     }
 
-    .portfolio-info h3 {
-        font-size: 25px;
+    .hero::after {
+      content: "PW";
+      position: absolute;
+      right: -30px;
+      bottom: -140px;
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(300px, 42vw, 600px);
+      line-height: 1;
+      font-weight: 800;
+      color: rgba(255,255,255,.018);
+      pointer-events: none;
     }
-}
-</style>
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 850px;
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 8vw, 94px);
+      letter-spacing: -5px;
+      font-weight: 800;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero-description {
+      max-width: 570px;
+      font-size: 17px;
+      margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .hero-bottom {
+      display: flex;
+      gap: 35px;
+      flex-wrap: wrap;
+      margin-top: 85px;
+      padding-top: 25px;
+      border-top: 1px solid var(--border);
+    }
+
+    .hero-bottom span {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #aaa59b;
+    }
+
+    /* ABOUT */
+
+    section {
+      padding: 110px 0;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 75px;
+      align-items: center;
+    }
+
+    .about-copy h2 {
+      margin-bottom: 25px;
+    }
+
+    .about-copy p {
+      margin-bottom: 17px;
+      font-size: 15px;
+    }
+
+    .about-panel {
+      min-height: 340px;
+      background:
+        radial-gradient(circle at 50% 45%, rgba(201,164,92,.16), transparent 45%),
+        var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 35px;
+    }
+
+    .about-mark {
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(75px, 12vw, 130px);
+      font-weight: 800;
+      letter-spacing: -12px;
+    }
+
+    .about-mark span {
+      color: var(--gold);
+    }
+
+    /* SERVICES */
+
+    .services {
+      background: #0e0e0e;
+    }
+
+    .section-heading {
+      max-width: 650px;
+      margin-bottom: 55px;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 18px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .service-card {
+      padding: 32px;
+      min-height: 230px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      transition: .3s;
+    }
+
+    .service-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-5px);
+    }
+
+    .service-number {
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-bottom: 35px;
+    }
+
+    .service-card h3 {
+      font-size: 21px;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      font-size: 13px;
+    }
+
+    /* PORTFOLIO */
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .portfolio-card {
+      min-height: 280px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #25221b, #101010);
+      border: 1px solid var(--border);
+    }
+
+    .portfolio-card:nth-child(2) {
+      background: linear-gradient(135deg, #242424, #111);
+    }
+
+    .portfolio-card:nth-child(3) {
+      background: linear-gradient(135deg, #2b2419, #111);
+    }
+
+    .portfolio-card:nth-child(4) {
+      background: linear-gradient(135deg, #202020, #121212);
+    }
+
+    .portfolio-card::before {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      right: -70px;
+      top: -70px;
+      border: 1px solid rgba(201,164,92,.25);
+      transform: rotate(35deg);
+    }
+
+    .portfolio-card h3,
+    .portfolio-card p {
+      position: relative;
+      z-index: 1;
+    }
+
+    .portfolio-card h3 {
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+
+    .portfolio-card p {
+      font-size: 13px;
+    }
+
+    .portfolio-note {
+      margin-top: 18px;
+      font-size: 12px;
+    }
+
+    /* PROCESS */
+
+    .process {
+      background: #0e0e0e;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .process-item {
+      border-top: 1px solid var(--gold);
+      padding-top: 22px;
+    }
+
+    .process-item span {
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    .process-item h3 {
+      margin: 18px 0 10px;
+      font-size: 19px;
+    }
+
+    .process-item p {
+      font-size: 13px;
+    }
+
+    /* CTA */
+
+    .cta {
+      text-align: center;
+      background:
+        radial-gradient(ellipse at center, rgba(201,164,92,.12), transparent 65%),
+        var(--bg);
+    }
+
+    .cta h2 {
+      max-width: 760px;
+      margin: 0 auto 20px;
+    }
+
+    .cta p {
+      max-width: 540px;
+      margin: 0 auto 30px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: #101010;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 70px;
+    }
+
+    .contact-info h2 {
+      margin-bottom: 20px;
+    }
+
+    .contact-detail {
+      margin-top: 25px;
+    }
+
+    .contact-detail small {
+      display: block;
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .contact-detail a,
+    .contact-detail span {
+      font-size: 15px;
+      color: var(--white);
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 16px;
+      background: #181818;
+      border: 1px solid var(--border);
+      color: white;
+      font: inherit;
+      outline: none;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--gold);
+    }
+
+    .contact-form textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .contact-form button {
+      justify-self: start;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 28px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    footer p {
+      font-size: 11px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 78px;
+        left: 0;
+        width: 100%;
+        padding: 25px 5%;
+        background: #101010;
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 150px 0 75px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2.5px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      section {
+        padding: 75px 0;
+      }
+
+      .services-grid,
+      .portfolio-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-bottom {
+        gap: 15px;
+        margin-top: 55px;
+      }
+
+      .hero-bottom span {
+        font-size: 9px;
+      }
+
+      .service-card {
+        min-height: 190px;
+      }
+
+      .portfolio-card {
+        min-height: 230px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-    <div class="logo">PRINTWORX<span>CY</span></div>
+  <header>
+    <div class="container navbar">
+      <a href="#home" class="logo">PRINT<span>WORX</span></a>
 
-    <nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact" class="nav-contact">Let's Talk</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">Creative Digital Design Studio</div>
+
+          <h1>
+            Ideas into<br>
+            <span>Visual Impact.</span>
+          </h1>
+
+          <p class="hero-description">
+            We create bold visual identities and digital experiences
+            that help businesses stand out, connect with people
+            and grow their brand.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#contact" class="btn">Start a Project ↗</a>
+            <a href="#services" class="btn btn-outline">Explore Services</a>
+          </div>
+        </div>
+
+        <div class="hero-bottom">
+          <span>Brand Identity</span>
+          <span>Graphic Design</span>
+          <span>Digital Creativity</span>
+          <span>Worldwide Projects</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-grid">
+
+        <div class="about-copy">
+          <div class="eyebrow">Who We Are</div>
+
+          <h2>Design that makes your brand <span class="gold">different.</span></h2>
+
+          <p>
+            At Printworx, we believe great design is more than just
+            appearance. It is about creating a strong identity,
+            communicating your message and making your business memorable.
+          </p>
+
+          <p>
+            We combine creativity, strategy and attention to detail
+            to deliver visual solutions for businesses of all sizes.
+          </p>
+
+          <a href="#contact" class="btn">Work With Us ↗</a>
+        </div>
+
+        <div class="about-panel">
+          <div class="about-mark">P<span>W</span></div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">What We Do</div>
+          <h2>Creative solutions.<br><span class="gold">Real results.</span></h2>
+          <p>
+            Everything your brand needs to look professional,
+            consistent and unforgettable.
+          </p>
+        </div>
+
+        <div class="services-grid">
+
+          <div class="service-card">
+            <div class="service-number">01 / BRANDING</div>
+            <h3>Brand Identity</h3>
+            <p>Logos, brand guidelines, visual identity and complete branding systems.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-number">02 / DESIGN</div>
+            <h3>Graphic Design</h3>
+            <p>Creative designs for advertising, business materials and communication.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-number">03 / SOCIAL</div>
+            <h3>Social Media Design</h3>
+            <p>Professional social media graphics, posts, stories and campaigns.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-number">04 / DIGITAL</div>
+            <h3>Digital Advertising</h3>
+            <p>Visual content and creative assets for digital marketing campaigns.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-number">05 / PACKAGING</div>
+            <h3>Packaging Design</h3>
+            <p>Distinctive packaging and product presentation that gets noticed.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-number">06 / PRINT</div>
+            <h3>Print & Visuals</h3>
+            <p>Business cards, flyers, posters, menus, signage and branded materials.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">Selected Work</div>
+          <h2>Made to be <span class="gold">noticed.</span></h2>
+          <p>
+            A selection of creative directions and services.
+            More project examples will be added to our portfolio.
+          </p>
+        </div>
+
+        <div class="portfolio-grid">
+
+          <div class="portfolio-card">
+            <h3>Brand Identity</h3>
+            <p>Building distinctive brands with purpose.</p>
+          </div>
+
+          <div class="portfolio-card">
+            <h3>Social Media</h3>
+            <p>Digital content that captures attention.</p>
+          </div>
+
+          <div class="portfolio-card">
+            <h3>Packaging Design</h3>
+            <p>Creative product presentation.</p>
+          </div>
+
+          <div class="portfolio-card">
+            <h3>Print & Advertising</h3>
+            <p>Visual communication that stands out.</p>
+          </div>
+
+        </div>
+
+        <p class="portfolio-note">
+          Portfolio categories shown above. Actual client projects can be added here.
+        </p>
+
+      </div>
+    </section>
+
+    <section class="process" id="process">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">How We Work</div>
+          <h2>From idea to <span class="gold">reality.</span></h2>
+        </div>
+
+        <div class="process-grid">
+
+          <div class="process-item">
+            <span>STEP 01</span>
+            <h3>Discover</h3>
+            <p>We understand your business, goals and creative direction.</p>
+          </div>
+
+          <div class="process-item">
+            <span>STEP 02</span>
+            <h3>Create</h3>
+            <p>We develop concepts and bring your ideas to life.</p>
+          </div>
+
+          <div class="process-item">
+            <span>STEP 03</span>
+            <h3>Refine</h3>
+            <p>We work with your feedback to perfect the final design.</p>
+          </div>
+
+          <div class="process-item">
+            <span>STEP 04</span>
+            <h3>Deliver</h3>
+            <p>Your finished creative work is ready to make an impact.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="eyebrow">Have a Project in Mind?</div>
+
+        <h2>Let's create something <span class="gold">remarkable.</span></h2>
+
+        <p>
+          Tell us about your idea. We would love to help you
+          bring your next project to life.
+        </p>
+
+        <a href="#contact" class="btn">Let's Talk ↗</a>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+
+        <div class="contact-info">
+          <div class="eyebrow">Get In Touch</div>
+
+          <h2>Let's start a <span class="gold">conversation.</span></h2>
+
+          <p>
+            Have a project, a question or an idea?
+            Send us a message and let's make it happen.
+          </p>
+
+          <div class="contact-detail">
+            <small>Email</small>
+            <a href="mailto:info@printworxcy.com">info@printworxcy.com</a>
+          </div>
+
+          <div class="contact-detail">
+            <small>Location</small>
+            <span>Paphos, Cyprus</span>
+          </div>
+
+          <div class="contact-detail">
+            <small>Working Worldwide</small>
+            <span>Available for projects internationally</span>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+
+          <input
+            type="text"
+            id="name"
+            placeholder="Your Name"
+            required
+          >
+
+          <input
+            type="email"
+            id="email"
+            placeholder="Your Email"
+            required
+          >
+
+          <input
+            type="text"
+            id="subject"
+            placeholder="Project / Subject"
+            required
+          >
+
+          <textarea
+            id="message"
+            placeholder="Tell us about your project..."
+            required
+          ></textarea>
+
+          <button type="submit" class="btn">Send Message ↗</button>
+
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+
+      <a href="#home" class="logo">PRINT<span>WORX</span></a>
+
+      <p>© <span id="year"></span> Printworx. All rights reserved.</p>
+
+      <div class="footer-links">
         <a href="#home">Home</a>
         <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#about">About</a>
         <a href="#contact">Contact</a>
-    </nav>
-</header>
-
-<section class="hero" id="home">
-
-    <div class="label">DIGITAL DESIGN STUDIO</div>
-
-    <h1>
-        CREATIVE DESIGN.<br>
-        <span class="gold">GLOBAL IMPACT.</span>
-    </h1>
-
-    <p>
-        We create distinctive visual identities and
-        professional digital designs that help businesses
-        stand out and grow.
-    </p>
-
-    <a href="#portfolio" class="button">
-        EXPLORE OUR WORK
-    </a>
-
-</section>
-
-<section id="services">
-
-    <h2 class="section-title">OUR SERVICES</h2>
-
-    <p class="section-subtitle">
-        Creative digital solutions for modern businesses.
-    </p>
-
-    <div class="services">
-
-        <div class="service-card">
-            <div class="icon">✦</div>
-            <h3>Logo & Branding</h3>
-            <p>Unique logos and complete brand identities for businesses.</p>
-        </div>
-
-        <div class="service-card">
-            <div class="icon">◈</div>
-            <h3>Brand Identity</h3>
-            <p>Professional brand systems, typography and colour palettes.</p>
-        </div>
-
-        <div class="service-card">
-            <div class="icon">▣</div>
-            <h3>Social Media Design</h3>
-            <p>Creative Instagram and Facebook posts, stories and campaigns.</p>
-        </div>
-
-        <div class="service-card">
-            <div class="icon">▤</div>
-            <h3>Digital Posters</h3>
-            <p>Promotional posters and advertising graphics for businesses.</p>
-        </div>
-
-        <div class="service-card">
-            <div class="icon">☰</div>
-            <h3>Digital Menus</h3>
-            <p>Elegant digital menus for restaurants, cafés and hotels.</p>
-        </div>
-
-        <div class="service-card">
-            <div class="icon">◇</div>
-            <h3>Advertising Design</h3>
-            <p>Digital advertising creatives for online campaigns.</p>
-        </div>
-
-        <div class="service-card">
-            <div class="icon">▧</div>
-            <h3>Digital Flyers</h3>
-            <p>Professional flyers and promotional materials for online use.</p>
-        </div>
-
-        <div class="service-card">
-            <div class="icon">✧</div>
-            <h3>Packaging Design</h3>
-            <p>Creative packaging concepts and visual product presentation.</p>
-        </div>
+      </div>
 
     </div>
+  </footer>
 
-</section>
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
 
-<section class="portfolio" id="portfolio">
+    menuToggle.addEventListener('click', function () {
+      navLinks.classList.toggle('active');
+    });
 
-    <h2 class="section-title">OUR PORTFOLIO</h2>
+    document.querySelectorAll('.nav-links a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        navLinks.classList.remove('active');
+      });
+    });
 
-    <p class="section-subtitle">
-        Selected creative projects and brand identities.
-    </p>
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    <div class="portfolio-card">
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+      event.preventDefault();
 
-        <img
-        src="D0475285-C01B-467F-B533-D12B749FD97E.png"
-        alt="AUREN Luxury Real Estate Branding Project">
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const message = document.getElementById('message').value.trim();
 
-        <div class="portfolio-info">
+      const recipient = 'info@printworxcy.com';
 
-            <div class="category">
-                BRAND IDENTITY · LUXURY REAL ESTATE
-            </div>
+      const emailSubject = encodeURIComponent('Website Enquiry: ' + subject);
 
-            <h3>AUREN — Real Estate</h3>
+      const emailBody = encodeURIComponent(
+        'Name: ' + name + '\n' +
+        'Customer Email: ' + email + '\n\n' +
+        'Message:\n' + message
+      );
 
-            <p>
-                A refined visual identity created for a luxury
-                real estate brand. The concept combines elegant
-                typography, architectural inspiration and a
-                sophisticated palette of black, champagne gold
-                and ivory.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-<section class="about" id="about">
-
-    <h2 class="section-title">ABOUT PRINTWORXCY</h2>
-
-    <p>
-        PrintworxCY is a digital design studio focused on
-        creating distinctive visual identities and creative
-        digital content for businesses around the world.
-
-        From branding and social media graphics to digital
-        menus and advertising, we help businesses communicate
-        with style and confidence.
-    </p>
-
-</section>
-
-<section>
-
-    <h2 class="section-title">HOW IT WORKS</h2>
-
-    <p class="section-subtitle">
-        A simple and professional process.
-    </p>
-
-    <div class="process">
-
-        <div class="step">
-            <div class="step-number">01</div>
-            <h3>Tell Us</h3>
-            <p>Share your idea and project requirements.</p>
-        </div>
-
-        <div class="step">
-            <div class="step-number">02</div>
-            <h3>Get a Quote</h3>
-            <p>Receive a personalised project quotation.</p>
-        </div>
-
-        <div class="step">
-            <div class="step-number">03</div>
-            <h3>Design</h3>
-            <p>We create your custom digital design.</p>
-        </div>
-
-        <div class="step">
-            <div class="step-number">04</div>
-            <h3>Delivery</h3>
-            <p>Receive your final digital design files.</p>
-        </div>
-
-    </div>
-
-</section>
-
-<section class="contact" id="contact">
-
-    <h2 class="section-title">LET'S WORK TOGETHER</h2>
-
-    <p>
-        Have a project in mind? Tell us what you need.
-    </p>
-
-    <a class="email" href="mailto:info@printworxcy.com">
-        info@printworxcy.com
-    </a>
-
-    <a class="button"
-       href="mailto:info@printworxcy.com?subject=New%20Design%20Project">
-       START YOUR PROJECT
-    </a>
-
-</section>
-
-<footer>
-    © 2026 PrintworxCY. All Rights Reserved.
-    <br>
-    Digital Graphic Design Studio
-</footer>
+      window.location.href =
+        'mailto:' + recipient +
+        '?subject=' + emailSubject +
+        '&body=' + emailBody;
+    });
+  </script>
 
 </body>
 </html>
