@@ -71,7 +71,8 @@
     .filter{padding:8px 13px;background:transparent;color:#c9c4ba;border:1px solid var(--line);font-size:11px;cursor:pointer}
     .filter.active,.filter:hover{background:var(--gold);color:#090909;border-color:var(--gold)}
     .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    .work{position:relative;aspect-ratio:4/3;min-height:0;overflow:hidden;background:#171717;border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
+    .work{position:relative;aspect-ratio:3/2;min-height:0;overflow:hidden;background:#171717;border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
+    .work img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
     .work-art{width:100%;height:100%;min-height:0;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:clamp(18px,3vw,34px);position:relative;overflow:hidden;transition:transform .35s}
     .work:hover .work-art{transform:scale(1.025)}
     .work-art strong{font:800 clamp(25px,4vw,48px)/.98 Manrope,sans-serif;letter-spacing:-2px;position:relative;z-index:1}
@@ -207,30 +208,38 @@
           <p class="muted" data-i18n="portfolioIntro">Explore creative directions across our design services.</p>
         </div>
       </div>
-<div class="gallery">
-        <article class="work art-1" data-category="branding" aria-label="Aurevo Logo Design">
-          <div class="work-art"><span class="art-kicker">BRAND CONCEPT</span><strong>AUREVO</strong><span class="art-sub">DESIGN STUDIO</span></div>
-          <div class="work-label" data-i18n="work1">Aurevo Logo Design</div>
+      <div class="filters">
+        <button class="filter active" data-filter="all" data-i18n="all">All</button>
+        <button class="filter" data-filter="branding" data-i18n="branding">Branding</button>
+        <button class="filter" data-filter="graphic" data-i18n="graphic">Graphic Design</button>
+        <button class="filter" data-filter="social" data-i18n="social">Social Media</button>
+        <button class="filter" data-filter="packaging" data-i18n="packaging">Packaging</button>
+        <button class="filter" data-filter="advertising" data-i18n="advertising">Digital Advertising</button>
+      </div>
+      <div class="gallery">
+        <article class="work" data-category="branding" aria-label="VELORA Luxury Hotel Branding">
+          <img src="01-velora-hotel-branding.png" alt="VELORA luxury hotel branding concept">
+          <div class="work-label">VELORA — Luxury Hotel Branding</div>
         </article>
-        <article class="work art-2" data-category="branding" aria-label="Brand Identity">
-          <div class="work-art"><span class="art-kicker">IDENTITY SYSTEM</span><strong>YOUR<br>BRAND.</strong><span class="art-sub">A clear point of view.</span></div>
-          <div class="work-label" data-i18n="work2">Brand Identity</div>
+        <article class="work" data-category="branding" aria-label="NØRDI Fashion Branding">
+          <img src="02-nordi-fashion-branding.png" alt="NØRDI fashion brand identity concept">
+          <div class="work-label">NØRDI — Fashion Branding</div>
         </article>
-        <article class="work art-3" data-category="graphic" aria-label="Graphic Design">
-          <div class="work-art"><span class="art-kicker">GRAPHIC DESIGN</span><strong>IDEAS<br>IN FORM</strong><span class="art-sub">TYPE · GRID · BALANCE</span></div>
-          <div class="work-label" data-i18n="work3">Graphic Design</div>
+        <article class="work" data-category="graphic" aria-label="SOLÉA Coffee Branding">
+          <img src="03-solea-coffee-branding.png" alt="SOLÉA coffee and lifestyle branding concept">
+          <div class="work-label">SOLÉA — Coffee &amp; Lifestyle</div>
         </article>
-        <article class="work art-4" data-category="social" aria-label="Social Media Design">
-          <div class="work-art"><span class="art-kicker">SOCIAL CAMPAIGN</span><strong>MAKE<br>IT SOCIAL.</strong><span class="art-sub">@ YOURBRAND</span></div>
-          <div class="work-label" data-i18n="work4">Social Media Design</div>
+        <article class="work" data-category="social" aria-label="MONVÉ Cosmetics Branding">
+          <img src="04-monve-cosmetics-branding.png" alt="MONVÉ cosmetics branding concept">
+          <div class="work-label">MONVÉ — Cosmetics Branding</div>
         </article>
-        <article class="work art-5" data-category="packaging" aria-label="Packaging Design">
-          <div class="work-art"><span class="art-kicker">PACKAGING</span><strong>GOOD<br>THINGS.</strong><span class="art-sub">DESIGNED TO STAND OUT</span></div>
-          <div class="work-label" data-i18n="work5">Packaging Design</div>
+        <article class="work" data-category="packaging" aria-label="ARKEN Real Estate Branding">
+          <img src="05-arken-real-estate-branding.png" alt="ARKEN architecture and real estate branding concept">
+          <div class="work-label">ARKEN — Architecture &amp; Real Estate</div>
         </article>
-        <article class="work art-6" data-category="advertising" aria-label="Digital Advertising">
-          <div class="work-art"><span class="art-kicker">DIGITAL ADVERTISING</span><strong>BE<br>SEEN.</strong><span class="art-sub">CAMPAIGN CREATIVE</span></div>
-          <div class="work-label" data-i18n="work6">Digital Advertising</div>
+        <article class="work" data-category="advertising" aria-label="VANTA Technology Branding">
+          <img src="06-vanta-tech-branding.png" alt="VANTA technology and digital branding concept">
+          <div class="work-label">VANTA — Technology &amp; Digital</div>
         </article>
       </div>
     </div>
@@ -342,6 +351,12 @@ document.getElementById("language").addEventListener("change",e=>setLanguage(e.t
 document.getElementById("year").textContent=new Date().getFullYear();
 document.getElementById("menu").addEventListener("click",()=>document.getElementById("navLinks").classList.toggle("open"));
 document.querySelectorAll("#navLinks a").forEach(a=>a.addEventListener("click",()=>document.getElementById("navLinks").classList.remove("open")));
+document.querySelectorAll(".filter").forEach(btn=>btn.addEventListener("click",()=>{
+  document.querySelectorAll(".filter").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  const f=btn.dataset.filter;
+  document.querySelectorAll(".work").forEach(card=>card.hidden=f!=="all"&&card.dataset.category!==f);
+}));
 document.getElementById("contactForm").addEventListener("submit",e=>{
   e.preventDefault();
   const name=document.getElementById("name").value.trim();
