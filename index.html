@@ -47,9 +47,12 @@
     section{padding:100px 0}
     .about-grid{display:grid;grid-template-columns:1fr;gap:0;align-items:center}
     .about-copy{max-width:850px;margin:0 auto;text-align:center}
-    .about-copy h2{font-size:clamp(36px,5.5vw,60px);margin-bottom:22px}
-    .about-copy p{color:var(--muted);font-size:17px;line-height:1.8;margin:0 auto 18px;max-width:780px}
+    .about-copy h2{font-size:clamp(38px,5.5vw,62px)}
+    .about-copy p{font-size:17px;line-height:1.8}
     .about-copy .btn{margin-top:12px}
+    .about-copy h2{margin-bottom:22px}
+    .about-copy p{color:var(--muted);margin:0 0 14px;font-size:15px}
+
     .services{background:#0e0e0e}
     .section-head{max-width:650px;margin-bottom:42px}
     .section-head h2{margin-bottom:15px}
@@ -67,12 +70,13 @@
     .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
     .filter{padding:8px 13px;background:transparent;color:#c9c4ba;border:1px solid var(--line);font-size:11px;cursor:pointer}
     .filter.active,.filter:hover{background:var(--gold);color:#090909;border-color:var(--gold)}
-    .gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-    .work{position:relative;aspect-ratio:4/3;width:100%;min-width:0;overflow:hidden;background:#171717;border:1px solid var(--line)}
-    .work img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:saturate(.9);transition:transform .45s}
-    .work:hover img{transform:scale(1.025)}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .work{position:relative;aspect-ratio:4/3;min-height:0;overflow:hidden;background:#171717;border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
+    .work img{width:100%;height:100%;min-height:0;object-fit:contain;display:block;filter:saturate(.92);transition:transform .45s}
+    .work:hover img{transform:scale(1.015)}
     .work-label{position:absolute;inset:auto 0 0;padding:35px 17px 15px;background:linear-gradient(transparent,rgba(0,0,0,.85));font-size:13px;font-weight:600}
     .work[hidden]{display:none}
+    .portfolio-note{display:none}
     .process{background:#101010}
     .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
     .step{border-top:1px solid var(--gold);padding-top:17px}
@@ -102,10 +106,10 @@
     [dir="rtl"] .hero h1,[dir="rtl"] h2,[dir="rtl"] h3{letter-spacing:0}
     @media(max-width:850px){
       .menu{display:block}.nav-right{gap:12px}.links{display:none;position:absolute;top:76px;left:0;right:0;background:#101010;padding:22px 5%;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}
-      .links.open{display:flex}.contact-grid{grid-template-columns:1fr;gap:35px}.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.service-list{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}
+      .links.open{display:flex}.about-grid,.contact-grid{grid-template-columns:1fr;gap:35px}.service-list{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}
     }
     @media(max-width:560px){
-      section{padding:72px 0}.hero{min-height:auto;padding:140px 0 65px}.hero h1{letter-spacing:-2px}.hero-tags{gap:12px;margin-top:50px}.service-list{grid-template-columns:1fr 1fr}.work{min-height:0}.portfolio-top{display:block}.steps{grid-template-columns:1fr 1fr}
+      section{padding:72px 0}.hero{min-height:auto;padding:140px 0 65px}.hero h1{letter-spacing:-2px}.hero-tags{gap:12px;margin-top:50px}.service-list,.gallery{grid-template-columns:1fr 1fr}.work,.work img{min-height:0}.portfolio-top{display:block}.steps{grid-template-columns:1fr 1fr}
     }
     @media(max-width:380px){.service-list,.gallery{grid-template-columns:1fr}}
   </style>
@@ -128,3 +132,212 @@
     </div>
   </div>
 </header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <div class="eyebrow" data-i18n="heroEyebrow">Independent Creative Design Studio</div>
+        <h1 data-i18n="heroTitle">Ideas into<br><span>Visual Impact.</span></h1>
+        <p data-i18n="heroText">We shape distinctive brands through thoughtful design, clear strategy and creative digital experiences.</p>
+        <div class="actions">
+          <a class="btn" href="#contact" data-i18n="heroButton">Start a Project</a>
+          <a class="btn btn-outline" href="#services" data-i18n="heroButton2">Explore Services</a>
+        </div>
+      </div>
+      <div class="hero-tags"><span>Brand Identity</span><span>Graphic Design</span><span>Digital Creativity</span><span>Worldwide Projects</span></div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container about-grid">
+      <div class="about-copy">
+        <div class="eyebrow" data-i18n="aboutEyebrow">About PRINTWORXCY</div>
+        <h2 data-i18n="aboutTitle">Creative thinking.<br><span class="gold">Distinctive design.</span></h2>
+        <p data-i18n="aboutP1">At PRINTWORXCY, we believe every great brand begins with a vision.</p>
+        <p data-i18n="aboutP2">We are a creative design studio that transforms ideas into distinctive visual identities. From logo design and brand identity to graphic design and digital creativity, we create thoughtful solutions that help businesses stand out.</p>
+        <p data-i18n="aboutP3">Our philosophy is simple: creativity, precision and excellence in every detail.</p>
+        <a class="btn" href="#contact" data-i18n="aboutButton">Work With Us</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow" data-i18n="servicesEyebrow">What We Do</div>
+        <h2 data-i18n="servicesTitle">Creative services.<br><span class="gold">Made to stand out.</span></h2>
+        <p class="muted" data-i18n="servicesIntro">Focused creative services for brands with ambition.</p>
+      </div>
+      <div class="service-list">
+        <article class="service"><small>01</small><h3 data-i18n="s1">Logo Design</h3><p data-i18n="sd1">Memorable logos built around your vision.</p></article>
+        <article class="service"><small>02</small><h3 data-i18n="s2">Brand Identity</h3><p data-i18n="sd2">A consistent look and feel for your brand.</p></article>
+        <article class="service"><small>03</small><h3 data-i18n="s3">Graphic Design</h3><p data-i18n="sd3">Clear, considered and impactful design.</p></article>
+        <article class="service"><small>04</small><h3 data-i18n="s4">Social Media Design</h3><p data-i18n="sd4">Creative content for your social channels.</p></article>
+        <article class="service"><small>05</small><h3 data-i18n="s5">Packaging Design</h3><p data-i18n="sd5">Distinctive packaging and product visuals.</p></article>
+        <article class="service"><small>06</small><h3 data-i18n="s6">Digital Advertising</h3><p data-i18n="sd6">Visual assets for digital campaigns.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-band">
+    <div class="container">
+      <div class="quote-mark" data-i18n="quote">“Great design is not just how a brand looks. It is how it is remembered.”</div>
+      <div class="quote-caption" data-i18n="quoteCaption">PRINTWORXCY — Beyond Design. Beyond Expectations.</div>
+    </div>
+  </section>
+
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <div class="portfolio-top">
+        <div class="section-head" style="margin-bottom:0">
+          <div class="eyebrow" data-i18n="portfolioEyebrow">Selected Work</div>
+          <h2 data-i18n="portfolioTitle">A closer look at<br><span class="gold">creative possibilities.</span></h2>
+          <p class="muted" data-i18n="portfolioIntro">Explore creative directions across our design services.</p>
+        </div>
+      </div>
+      <div class="filters">
+        <button class="filter active" data-filter="all" data-i18n="all">All</button>
+        <button class="filter" data-filter="branding" data-i18n="branding">Branding</button>
+        <button class="filter" data-filter="graphic" data-i18n="graphic">Graphic Design</button>
+        <button class="filter" data-filter="social" data-i18n="social">Social Media</button>
+        <button class="filter" data-filter="packaging" data-i18n="packaging">Packaging</button>
+        <button class="filter" data-filter="advertising" data-i18n="advertising">Digital Advertising</button>
+      </div>
+      <div class="gallery">
+        <article class="work" data-category="branding"><img loading="lazy" src="aurevo%20design%20studio.png" alt="Aurevo Logo Design"><div class="work-label" data-i18n="work1">Aurevo Logo Design</div></article>
+        <article class="work" data-category="branding"><img loading="lazy" src="brand%20identity.png" alt="Brand Identity"><div class="work-label" data-i18n="work2">Brand Identity</div></article>
+        <article class="work" data-category="graphic"><img loading="lazy" src="graphic%20design.png" alt="Graphic Design"><div class="work-label" data-i18n="work3">Graphic Design</div></article>
+        <article class="work" data-category="social"><img loading="lazy" src="social%20media%20design.png" alt="Social Media Design"><div class="work-label" data-i18n="work4">Social Media Design</div></article>
+        <article class="work" data-category="packaging"><img loading="lazy" src="packing%20design.png" alt="Packaging Design"><div class="work-label" data-i18n="work5">Packaging Design</div></article>
+        <article class="work" data-category="advertising"><img loading="lazy" src="digital%20advertising.png" alt="Digital Advertising"><div class="work-label" data-i18n="work6">Digital Advertising</div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="process">
+    <div class="container">
+      <div class="section-head"><div class="eyebrow" data-i18n="processEyebrow">Our Approach</div><h2 data-i18n="processTitle">From vision to <span class="gold">visual identity.</span></h2></div>
+      <div class="steps">
+        <div class="step"><small>01</small><h3 data-i18n="step1">Discover</h3><p data-i18n="stepd1">We learn about your business and goals.</p></div>
+        <div class="step"><small>02</small><h3 data-i18n="step2">Create</h3><p data-i18n="stepd2">We develop a creative direction for your brand.</p></div>
+        <div class="step"><small>03</small><h3 data-i18n="step3">Refine</h3><p data-i18n="stepd3">We refine the design with your feedback.</p></div>
+        <div class="step"><small>04</small><h3 data-i18n="step4">Deliver</h3><p data-i18n="stepd4">We prepare and deliver your final designs.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <div class="eyebrow" data-i18n="ctaEyebrow">Have a Project in Mind?</div>
+      <h2 data-i18n="ctaTitle">Let's create something <span class="gold">remarkable.</span></h2>
+      <p data-i18n="ctaText">Tell us about your vision. We would love to hear about your next project.</p>
+      <a class="btn" href="#contact" data-i18n="ctaButton">Let's Talk</a>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <div class="eyebrow" data-i18n="contactEyebrow">Get In Touch</div>
+        <h2 data-i18n="contactTitle">Let's start a <span class="gold">conversation.</span></h2>
+        <p data-i18n="contactText">Have a project or an idea? Send us a message and let's discuss it.</p>
+        <div class="detail"><small>Email</small><a href="mailto:info@printworxcy.com">info@printworxcy.com</a></div>
+        <div class="detail"><small data-i18n="availabilityLabel">Availability</small><span data-i18n="availability">Available for projects worldwide</span></div>
+      </div>
+      <form id="contactForm">
+        <input id="name" type="text" placeholder="Your Name" data-placeholder="namePlaceholder" required>
+        <input id="email" type="email" placeholder="Your Email" data-placeholder="emailPlaceholder" required>
+        <input id="subject" type="text" placeholder="Project / Subject" data-placeholder="subjectPlaceholder" required>
+        <textarea id="message" placeholder="Tell us about your project..." data-placeholder="messagePlaceholder" required></textarea>
+        <button class="btn" type="submit" data-i18n="send">Send Enquiry</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <a class="brand" href="#home">PRINTWORX<span>CY</span></a>
+    <p>© <span id="year"></span> PRINTWORXCY. <span data-i18n="rights">All rights reserved.</span></p>
+    <div class="footer-links"><a href="#about" data-i18n="navAbout">About</a><a href="#services" data-i18n="navServices">Services</a><a href="#contact" data-i18n="navContact">Contact</a></div>
+  </div>
+</footer>
+
+<script>
+const translations = {
+en:{
+navAbout:"About",navServices:"Services",navPortfolio:"Portfolio",navContact:"Contact",
+heroEyebrow:"Independent Creative Design Studio",heroTitle:'Ideas into<br><span>Visual Impact.</span>',heroText:"We shape distinctive brands through thoughtful design, clear strategy and creative digital experiences.",heroButton:"Start a Project",heroButton2:"Explore Services",
+aboutEyebrow:"About PRINTWORXCY",aboutTitle:'Creative thinking.<br><span class="gold">Distinctive design.</span>',aboutP1:"At PRINTWORXCY, we believe every great brand begins with a vision.",aboutP2:"We are a creative design studio that transforms ideas into distinctive visual identities. From logo design and brand identity to graphic design and digital creativity, we create thoughtful solutions that help businesses stand out.",aboutP3:"Our philosophy is simple: creativity, precision and excellence in every detail.",aboutButton:"Work With Us",
+servicesEyebrow:"What We Do",servicesTitle:'Creative services.<br><span class="gold">Made to stand out.</span>',servicesIntro:"Focused creative services for brands with ambition.",s1:"Logo Design",sd1:"Memorable logos built around your vision.",s2:"Brand Identity",sd2:"A consistent look and feel for your brand.",s3:"Graphic Design",sd3:"Clear, considered and impactful design.",s4:"Social Media Design",sd4:"Creative content for your social channels.",s5:"Packaging Design",sd5:"Distinctive packaging and product visuals.",s6:"Digital Advertising",sd6:"Visual assets for digital campaigns.",
+quote:"“Great design is not just how a brand looks. It is how it is remembered.”",quoteCaption:"PRINTWORXCY — Beyond Design. Beyond Expectations.",
+portfolioEyebrow:"Selected Work",portfolioTitle:'A closer look at<br><span class="gold">creative possibilities.</span>',portfolioIntro:"Explore creative directions across our design services.",all:"All",branding:"Branding",graphic:"Graphic Design",social:"Social Media",packaging:"Packaging",advertising:"Digital Advertising",work1:"Aurevo Logo Design",work2:"Brand Identity",work3:"Graphic Design",work4:"Social Media Design",work5:"Packaging Design",work6:"Digital Advertising",portfolioNote:"Images are visual inspiration placeholders, not representations of completed client projects. Replace them with your own approved work.",
+processEyebrow:"Our Approach",processTitle:'From vision to <span class="gold">visual identity.</span>',step1:"Discover",stepd1:"We learn about your business and goals.",step2:"Create",stepd2:"We develop a creative direction for your brand.",step3:"Refine",stepd3:"We refine the design with your feedback.",step4:"Deliver",stepd4:"We prepare and deliver your final designs.",
+ctaEyebrow:"Have a Project in Mind?",ctaTitle:'Let\'s create something <span class="gold">remarkable.</span>',ctaText:"Tell us about your vision. We would love to hear about your next project.",ctaButton:"Let's Talk",
+contactEyebrow:"Get In Touch",contactTitle:'Let\'s start a <span class="gold">conversation.</span>',contactText:"Have a project or an idea? Send us a message and let's discuss it.",availabilityLabel:"Availability",availability:"Available for projects worldwide",namePlaceholder:"Your Name",emailPlaceholder:"Your Email",subjectPlaceholder:"Project / Subject",messagePlaceholder:"Tell us about your project...",send:"Send Enquiry",rights:"All rights reserved."
+},
+el:{
+navAbout:"Σχετικά",navServices:"Υπηρεσίες",navPortfolio:"Portfolio",navContact:"Επικοινωνία",
+heroEyebrow:"Ανεξάρτητο δημιουργικό στούντιο σχεδιασμού",heroTitle:'Ιδέες με<br><span>οπτικό αντίκτυπο.</span>',heroText:"Δημιουργούμε ξεχωριστές επωνυμίες μέσα από προσεγμένο σχεδιασμό, στρατηγική και δημιουργικές ψηφιακές εμπειρίες.",heroButton:"Ξεκινήστε ένα project",heroButton2:"Οι υπηρεσίες μας",
+aboutEyebrow:"Σχετικά με την PRINTWORXCY",aboutTitle:'Δημιουργική σκέψη.<br><span class="gold">Ξεχωριστός σχεδιασμός.</span>',aboutP1:"Στην PRINTWORXCY πιστεύουμε ότι κάθε σπουδαίο brand ξεκινά από ένα όραμα.",aboutP2:"Είμαστε ένα δημιουργικό στούντιο σχεδιασμού που μετατρέπει ιδέες σε ξεχωριστές οπτικές ταυτότητες. Από τον σχεδιασμό λογοτύπου και την εταιρική ταυτότητα μέχρι τον γραφιστικό σχεδιασμό και τις ψηφιακές δημιουργίες, προσφέρουμε λύσεις που βοηθούν τις επιχειρήσεις να ξεχωρίσουν.",aboutP3:"Η φιλοσοφία μας είναι απλή: δημιουργικότητα, ακρίβεια και ποιότητα σε κάθε λεπτομέρεια.",aboutButton:"Συνεργαστείτε μαζί μας",
+servicesEyebrow:"Τι προσφέρουμε",servicesTitle:'Δημιουργικές υπηρεσίες.<br><span class="gold">Με χαρακτήρα.</span>',servicesIntro:"Στοχευμένες δημιουργικές υπηρεσίες για brands με φιλοδοξίες.",s1:"Σχεδιασμός Λογοτύπου",sd1:"Ξεχωριστά λογότυπα βασισμένα στο όραμά σας.",s2:"Εταιρική Ταυτότητα",sd2:"Ενιαία εικόνα και χαρακτήρας για το brand σας.",s3:"Γραφιστικός Σχεδιασμός",sd3:"Καθαρός, προσεγμένος και δυναμικός σχεδιασμός.",s4:"Σχεδιασμός Social Media",sd4:"Δημιουργικό περιεχόμενο για τα κοινωνικά δίκτυα.",s5:"Σχεδιασμός Συσκευασίας",sd5:"Ξεχωριστές συσκευασίες και εικόνες προϊόντων.",s6:"Ψηφιακή Διαφήμιση",sd6:"Οπτικό υλικό για ψηφιακές καμπάνιες.",
+quote:"«Ο καλός σχεδιασμός δεν αφορά μόνο την εικόνα ενός brand. Αφορά το πώς μένει στη μνήμη.»",quoteCaption:"PRINTWORXCY — Πέρα από τον σχεδιασμό. Πέρα από τις προσδοκίες.",
+portfolioEyebrow:"Επιλεγμένες δημιουργίες",portfolioTitle:'Μια ματιά στις<br><span class="gold">δημιουργικές δυνατότητες.</span>',portfolioIntro:"Εξερευνήστε δημιουργικές προσεγγίσεις στις υπηρεσίες σχεδιασμού μας.",all:"Όλα",branding:"Branding",graphic:"Γραφιστική",social:"Social Media",packaging:"Συσκευασία",advertising:"Ψηφιακή Διαφήμιση",work1:"Aurevo Logo Design",work2:"Brand Identity",work3:"Γραφιστική",work4:"Social Media Design",work5:"Σχεδιασμός Συσκευασίας",work6:"Ψηφιακή Διαφήμιση",portfolioNote:"Οι εικόνες είναι ενδεικτική έμπνευση και όχι ολοκληρωμένα έργα πελατών. Αντικαταστήστε τες με δικές σας εγκεκριμένες δουλειές.",
+processEyebrow:"Η προσέγγισή μας",processTitle:'Από το όραμα στην <span class="gold">οπτική ταυτότητα.</span>',step1:"Ανακαλύπτουμε",stepd1:"Μαθαίνουμε την επιχείρηση και τους στόχους σας.",step2:"Δημιουργούμε",stepd2:"Αναπτύσσουμε τη δημιουργική κατεύθυνση του brand σας.",step3:"Βελτιώνουμε",stepd3:"Τελειοποιούμε τον σχεδιασμό με βάση τα σχόλιά σας.",step4:"Παραδίδουμε",stepd4:"Ετοιμάζουμε και παραδίδουμε τα τελικά σχέδια.",
+ctaEyebrow:"Έχετε κάποιο project;",ctaTitle:'Ας δημιουργήσουμε κάτι <span class="gold">ξεχωριστό.</span>',ctaText:"Πείτε μας το όραμά σας. Θα χαρούμε να ακούσουμε την επόμενη ιδέα σας.",ctaButton:"Επικοινωνήστε μαζί μας",
+contactEyebrow:"Επικοινωνία",contactTitle:'Ας ξεκινήσουμε μια <span class="gold">συζήτηση.</span>',contactText:"Έχετε ένα project ή μια ιδέα; Στείλτε μας μήνυμα για να το συζητήσουμε.",availabilityLabel:"Διαθεσιμότητα",availability:"Αναλαμβάνουμε projects παγκοσμίως",namePlaceholder:"Το όνομά σας",emailPlaceholder:"Το email σας",subjectPlaceholder:"Project / Θέμα",messagePlaceholder:"Πείτε μας για το project σας...",send:"Αποστολή αιτήματος",rights:"Με επιφύλαξη παντός δικαιώματος."
+},
+de:{
+navAbout:"Über uns",navServices:"Leistungen",navPortfolio:"Portfolio",navContact:"Kontakt",heroEyebrow:"Unabhängiges Kreativstudio",heroTitle:'Ideen mit<br><span>visueller Wirkung.</span>',heroText:"Wir gestalten unverwechselbare Marken mit durchdachtem Design, klarer Strategie und kreativen digitalen Erlebnissen.",heroButton:"Projekt starten",heroButton2:"Leistungen entdecken",aboutEyebrow:"Über PRINTWORXCY",aboutTitle:'Kreatives Denken.<br><span class="gold">Unverwechselbares Design.</span>',aboutP1:"Bei PRINTWORXCY beginnt jede starke Marke mit einer Vision.",aboutP2:"Wir verwandeln Ideen in unverwechselbare visuelle Identitäten – von Logos und Markenauftritten bis zu Grafikdesign und digitalen Kreationen.",aboutP3:"Unsere Philosophie: Kreativität, Präzision und Exzellenz in jedem Detail.",aboutButton:"Mit uns arbeiten",servicesEyebrow:"Was wir tun",servicesTitle:'Kreative Leistungen.<br><span class="gold">Mit Wiedererkennung.</span>',servicesIntro:"Kreative Leistungen für ambitionierte Marken.",s1:"Logodesign",sd1:"Einprägsame Logos nach Ihrer Vision.",s2:"Markenidentität",sd2:"Ein einheitlicher Auftritt für Ihre Marke.",s3:"Grafikdesign",sd3:"Klares und wirkungsvolles Design.",s4:"Social-Media-Design",sd4:"Kreative Inhalte für Ihre Social-Media-Kanäle.",s5:"Verpackungsdesign",sd5:"Markante Verpackungen und Produktvisuals.",s6:"Digitale Werbung",sd6:"Visuelle Inhalte für digitale Kampagnen.",quote:"„Gutes Design zeigt nicht nur, wie eine Marke aussieht. Es sorgt dafür, dass sie in Erinnerung bleibt.“",quoteCaption:"PRINTWORXCY — Mehr als Design. Mehr als erwartet.",portfolioEyebrow:"Ausgewählte Arbeiten",portfolioTitle:'Ein Einblick in<br><span class="gold">kreative Möglichkeiten.</span>',portfolioIntro:"Entdecken Sie kreative Ansätze aus unseren Designleistungen.",all:"Alle",branding:"Branding",graphic:"Grafikdesign",social:"Social Media",packaging:"Verpackung",work1:"Markenidentitätskonzept",work2:"Grafikdesign-Inspiration",work3:"Social-Media-Kreation",work4:"Verpackungsinspiration",work5:"Visuelle Identität",work6:"Kreative Richtung",portfolioNote:"Die Bilder dienen als Inspiration und zeigen keine abgeschlossenen Kundenprojekte.",processEyebrow:"Unser Ansatz",processTitle:'Von der Vision zur <span class="gold">Markenidentität.</span>',step1:"Entdecken",stepd1:"Wir lernen Ihr Unternehmen und Ihre Ziele kennen.",step2:"Gestalten",stepd2:"Wir entwickeln die kreative Richtung Ihrer Marke.",step3:"Verfeinern",stepd3:"Wir optimieren das Design anhand Ihres Feedbacks.",step4:"Liefern",stepd4:"Wir bereiten Ihre finalen Designs vor.",ctaEyebrow:"Ein Projekt geplant?",ctaTitle:'Lassen Sie uns etwas <span class="gold">Besonderes schaffen.</span>',ctaText:"Erzählen Sie uns von Ihrer Vision.",ctaButton:"Kontakt aufnehmen",contactEyebrow:"Kontakt",contactTitle:'Beginnen wir ein <span class="gold">Gespräch.</span>',contactText:"Haben Sie ein Projekt oder eine Idee? Schreiben Sie uns.",availabilityLabel:"Verfügbarkeit",availability:"Projekte weltweit",namePlaceholder:"Ihr Name",emailPlaceholder:"Ihre E-Mail",subjectPlaceholder:"Projekt / Betreff",messagePlaceholder:"Erzählen Sie uns von Ihrem Projekt ...",send:"Anfrage senden",rights:"Alle Rechte vorbehalten."
+},
+fr:{
+navAbout:"À propos",navServices:"Services",navPortfolio:"Portfolio",navContact:"Contact",heroEyebrow:"Studio créatif indépendant",heroTitle:'Des idées à<br><span>fort impact visuel.</span>',heroText:"Nous façonnons des marques distinctives grâce à un design réfléchi, une stratégie claire et des expériences numériques créatives.",heroButton:"Démarrer un projet",heroButton2:"Découvrir les services",aboutEyebrow:"À propos de PRINTWORXCY",aboutTitle:'Pensée créative.<br><span class="gold">Design distinctif.</span>',aboutP1:"Chez PRINTWORXCY, nous pensons que chaque grande marque commence par une vision.",aboutP2:"Nous transformons les idées en identités visuelles distinctives : logos, identité de marque, design graphique et créations numériques.",aboutP3:"Notre philosophie : créativité, précision et excellence dans chaque détail.",aboutButton:"Travailler avec nous",servicesEyebrow:"Nos services",servicesTitle:'Services créatifs.<br><span class="gold">Pour se démarquer.</span>',servicesIntro:"Des services créatifs pour les marques ambitieuses.",s1:"Création de logo",sd1:"Des logos mémorables inspirés de votre vision.",s2:"Identité de marque",sd2:"Une image cohérente pour votre marque.",s3:"Design graphique",sd3:"Un design clair, soigné et impactant.",s4:"Design pour réseaux sociaux",sd4:"Du contenu créatif pour vos réseaux.",s5:"Design packaging",sd5:"Des emballages et visuels produits distinctifs.",s6:"Publicité numérique",sd6:"Des créations visuelles pour vos campagnes.",quote:"« Un grand design ne montre pas seulement l’apparence d’une marque. Il la rend inoubliable. »",quoteCaption:"PRINTWORXCY — Au-delà du design. Au-delà des attentes.",portfolioEyebrow:"Projets sélectionnés",portfolioTitle:'Un aperçu des<br><span class="gold">possibilités créatives.</span>',portfolioIntro:"Découvrez nos univers créatifs.",all:"Tout",branding:"Identité de marque",graphic:"Design graphique",social:"Réseaux sociaux",packaging:"Packaging",work1:"Concept d’identité de marque",work2:"Inspiration graphique",work3:"Création pour réseaux sociaux",work4:"Inspiration packaging",work5:"Inspiration identité visuelle",work6:"Direction créative",portfolioNote:"Ces images sont des inspirations visuelles et non des projets clients réalisés.",processEyebrow:"Notre approche",processTitle:'De la vision à <span class="gold">l’identité visuelle.</span>',step1:"Découvrir",stepd1:"Nous découvrons votre entreprise et vos objectifs.",step2:"Créer",stepd2:"Nous développons une direction créative.",step3:"Affiner",stepd3:"Nous affinons le design avec vos retours.",step4:"Livrer",stepd4:"Nous préparons vos créations finales.",ctaEyebrow:"Un projet en tête ?",ctaTitle:'Créons quelque chose de <span class="gold">remarquable.</span>',ctaText:"Parlez-nous de votre vision et de votre prochain projet.",ctaButton:"Parlons-en",contactEyebrow:"Contactez-nous",contactTitle:'Commençons une <span class="gold">conversation.</span>',contactText:"Un projet ou une idée ? Envoyez-nous un message.",availabilityLabel:"Disponibilité",availability:"Projets dans le monde entier",namePlaceholder:"Votre nom",emailPlaceholder:"Votre e-mail",subjectPlaceholder:"Projet / Sujet",messagePlaceholder:"Parlez-nous de votre projet...",send:"Envoyer la demande",rights:"Tous droits réservés."
+},
+zh:{
+navAbout:"关于我们",navServices:"服务",navPortfolio:"作品集",navContact:"联系",heroEyebrow:"独立创意设计工作室",heroTitle:'让创意成为<br><span>视觉影响力。</span>',heroText:"通过深思熟虑的设计、清晰的策略和富有创意的数字体验，打造独特品牌。",heroButton:"开始项目",heroButton2:"查看服务",aboutEyebrow:"关于 PRINTWORXCY",aboutTitle:'创意思维。<br><span class="gold">独特设计。</span>',aboutP1:"在 PRINTWORXCY，我们相信每个优秀品牌都始于一个愿景。",aboutP2:"我们是一家创意设计工作室，将想法转化为独特的视觉形象，服务涵盖标志设计、品牌形象、平面设计和数字创意。",aboutP3:"我们的理念很简单：在每个细节中追求创意、精准与卓越。",aboutButton:"与我们合作",servicesEyebrow:"我们的服务",servicesTitle:'创意服务。<br><span class="gold">让品牌脱颖而出。</span>',servicesIntro:"为有抱负的品牌提供专注的创意服务。",s1:"标志设计",sd1:"围绕您的愿景打造令人难忘的标志。",s2:"品牌形象",sd2:"为您的品牌建立统一的视觉风格。",s3:"平面设计",sd3:"清晰、精致且有影响力的设计。",s4:"社交媒体设计",sd4:"为社交媒体渠道创作内容。",s5:"包装设计",sd5:"独特的包装与产品视觉设计。",s6:"数字广告",sd6:"用于数字营销活动的视觉素材。",quote:"“优秀的设计不仅决定品牌看起来如何，更决定品牌如何被记住。”",quoteCaption:"PRINTWORXCY — 超越设计，超越期待。",portfolioEyebrow:"精选作品",portfolioTitle:'探索<br><span class="gold">创意可能性。</span>',portfolioIntro:"探索我们不同设计服务中的创意方向。",all:"全部",branding:"品牌设计",graphic:"平面设计",social:"社交媒体",packaging:"包装",work1:"品牌形象概念",work2:"平面设计灵感",work3:"社交媒体创意",work4:"包装设计灵感",work5:"视觉形象灵感",work6:"创意方向",portfolioNote:"图片仅作视觉灵感展示，并非已完成的客户项目。",processEyebrow:"我们的方式",processTitle:'从愿景到<span class="gold">视觉形象。</span>',step1:"了解",stepd1:"了解您的业务与目标。",step2:"创作",stepd2:"为您的品牌制定创意方向。",step3:"完善",stepd3:"根据您的反馈完善设计。",step4:"交付",stepd4:"准备并交付最终设计。",ctaEyebrow:"您有项目想法吗？",ctaTitle:'让我们创造<span class="gold">非凡作品。</span>',ctaText:"告诉我们您的愿景和下一个项目。",ctaButton:"联系我们",contactEyebrow:"联系我们",contactTitle:'开启一段<span class="gold">对话。</span>',contactText:"有项目或想法？欢迎给我们留言。",availabilityLabel:"服务范围",availability:"面向全球项目",namePlaceholder:"您的姓名",emailPlaceholder:"您的邮箱",subjectPlaceholder:"项目 / 主题",messagePlaceholder:"请介绍您的项目...",send:"发送咨询",rights:"版权所有。"
+},
+ar:{
+navAbout:"من نحن",navServices:"الخدمات",navPortfolio:"الأعمال",navContact:"اتصل بنا",heroEyebrow:"استوديو تصميم إبداعي مستقل",heroTitle:'نحو أفكار ذات<br><span>تأثير بصري.</span>',heroText:"نصمم علامات تجارية مميزة من خلال تصميم مدروس واستراتيجية واضحة وتجارب رقمية إبداعية.",heroButton:"ابدأ مشروعاً",heroButton2:"اكتشف الخدمات",aboutEyebrow:"عن PRINTWORXCY",aboutTitle:'تفكير إبداعي.<br><span class="gold">تصميم مميز.</span>',aboutP1:"في PRINTWORXCY نؤمن أن كل علامة تجارية رائعة تبدأ برؤية.",aboutP2:"نحن استوديو تصميم إبداعي نحول الأفكار إلى هويات بصرية مميزة، من تصميم الشعارات والهوية التجارية إلى التصميم الجرافيكي والإبداع الرقمي.",aboutP3:"فلسفتنا بسيطة: الإبداع والدقة والتميز في كل التفاصيل.",aboutButton:"اعمل معنا",servicesEyebrow:"ماذا نقدم",servicesTitle:'خدمات إبداعية.<br><span class="gold">لتتميز علامتك.</span>',servicesIntro:"خدمات إبداعية متخصصة للعلامات التجارية الطموحة.",s1:"تصميم الشعارات",sd1:"شعارات مميزة تنطلق من رؤيتك.",s2:"الهوية التجارية",sd2:"مظهر متناسق وشخصية واضحة لعلامتك.",s3:"التصميم الجرافيكي",sd3:"تصميم واضح ومدروس ومؤثر.",s4:"تصميم وسائل التواصل",sd4:"محتوى إبداعي لقنوات التواصل الاجتماعي.",s5:"تصميم التغليف",sd5:"تصاميم تغليف وصور منتجات مميزة.",s6:"الإعلان الرقمي",sd6:"مواد بصرية للحملات الرقمية.",quote:"«التصميم الرائع لا يحدد شكل العلامة فقط، بل يحدد كيف تبقى في الذاكرة.»",quoteCaption:"PRINTWORXCY — ما وراء التصميم. ما وراء التوقعات.",portfolioEyebrow:"أعمال مختارة",portfolioTitle:'اكتشفوا<br><span class="gold">آفاق الإبداع.</span>',portfolioIntro:"استكشفوا التوجهات الإبداعية لخدمات التصميم لدينا.",all:"الكل",branding:"الهوية التجارية",graphic:"التصميم الجرافيكي",social:"وسائل التواصل",packaging:"التغليف",work1:"مفهوم الهوية التجارية",work2:"إلهام التصميم الجرافيكي",work3:"تصميم وسائل التواصل",work4:"إلهام التغليف",work5:"إلهام الهوية البصرية",work6:"التوجه الإبداعي",portfolioNote:"الصور للالهام البصري وليست مشاريع عملاء منجزة.",processEyebrow:"منهجيتنا",processTitle:'من الرؤية إلى <span class="gold">الهوية البصرية.</span>',step1:"اكتشاف",stepd1:"نتعرف على أعمالك وأهدافك.",step2:"إبداع",stepd2:"نطور التوجه الإبداعي لعلامتك.",step3:"تحسين",stepd3:"نحسن التصميم بناءً على ملاحظاتك.",step4:"تسليم",stepd4:"نجهز التصاميم النهائية ونسلمها.",ctaEyebrow:"هل لديك مشروع؟",ctaTitle:'لنصنع شيئاً <span class="gold">استثنائياً.</span>',ctaText:"أخبرنا عن رؤيتك ومشروعك القادم.",ctaButton:"تواصل معنا",contactEyebrow:"تواصل معنا",contactTitle:'لنبدأ <span class="gold">حواراً.</span>',contactText:"هل لديك مشروع أو فكرة؟ أرسل لنا رسالة.",availabilityLabel:"نطاق العمل",availability:"نرحب بالمشاريع من جميع أنحاء العالم",namePlaceholder:"اسمك",emailPlaceholder:"بريدك الإلكتروني",subjectPlaceholder:"المشروع / الموضوع",messagePlaceholder:"أخبرنا عن مشروعك...",send:"إرسال الطلب",rights:"جميع الحقوق محفوظة."
+}
+};
+
+function setLanguage(lang){
+  const dict=translations[lang]||translations.en;
+  document.documentElement.lang=lang;
+  document.documentElement.dir=lang==="ar"?"rtl":"ltr";
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const key=el.getAttribute("data-i18n");
+    if(dict[key]!==undefined) el.innerHTML=dict[key];
+  });
+  document.querySelectorAll("[data-placeholder]").forEach(el=>{
+    const key=el.getAttribute("data-placeholder");
+    if(dict[key]) el.placeholder=dict[key];
+  });
+  document.getElementById("language").value=lang;
+  try{localStorage.setItem("pwcy-language",lang)}catch(e){}
+}
+document.getElementById("language").addEventListener("change",e=>setLanguage(e.target.value));
+document.getElementById("year").textContent=new Date().getFullYear();
+document.getElementById("menu").addEventListener("click",()=>document.getElementById("navLinks").classList.toggle("open"));
+document.querySelectorAll("#navLinks a").forEach(a=>a.addEventListener("click",()=>document.getElementById("navLinks").classList.remove("open")));
+document.querySelectorAll(".filter").forEach(btn=>btn.addEventListener("click",()=>{
+  document.querySelectorAll(".filter").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  const f=btn.dataset.filter;
+  document.querySelectorAll(".work").forEach(card=>card.hidden=f!=="all"&&card.dataset.category!==f);
+}));
+document.getElementById("contactForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const name=document.getElementById("name").value.trim();
+  const email=document.getElementById("email").value.trim();
+  const subject=document.getElementById("subject").value.trim();
+  const message=document.getElementById("message").value.trim();
+  const body=encodeURIComponent("Name: "+name+"\nCustomer email: "+email+"\n\n"+message);
+  window.location.href="mailto:info@printworxcy.com?subject="+encodeURIComponent("Website enquiry: "+subject)+"&body="+body;
+});
+let saved="en";try{saved=localStorage.getItem("pwcy-language")||"en"}catch(e){}
+setLanguage(saved);
+</script>
+</body>
+</html>
