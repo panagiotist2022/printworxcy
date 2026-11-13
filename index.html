@@ -45,8 +45,12 @@
     .actions{display:flex;gap:12px;flex-wrap:wrap}
     .hero-tags{display:flex;gap:28px;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:75px;padding-top:22px;color:#aaa59b;text-transform:uppercase;letter-spacing:1.5px;font-size:10px}
     section{padding:100px 0}
-    .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:65px;align-items:center}
-    .about-copy h2{margin-bottom:22px}
+    .about-grid{display:grid;grid-template-columns:1fr;gap:0;align-items:center}
+    .about-copy{max-width:1000px;margin:0 auto;text-align:center}
+    .about-copy .eyebrow{margin-bottom:20px}
+    .about-copy h2{font-size:clamp(42px,6vw,68px);margin-bottom:28px;letter-spacing:-2px}
+    .about-copy p{font-size:clamp(16px,1.35vw,19px);line-height:1.8;margin:0 auto 18px;max-width:900px}
+    .about-copy .btn{margin-top:8px}
     .about-copy p{color:var(--muted);margin:0 0 14px;font-size:15px}
     .about-visual{min-height:330px;position:relative;overflow:hidden;background:linear-gradient(135deg,#17140e,#0d0d0d);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;text-align:center;padding:30px}
     .about-mark{display:flex;flex-direction:column;align-items:center;gap:13px}
@@ -72,8 +76,8 @@
     .filter{padding:8px 13px;background:transparent;color:#c9c4ba;border:1px solid var(--line);font-size:11px;cursor:pointer}
     .filter.active,.filter:hover{background:var(--gold);color:#090909;border-color:var(--gold)}
     .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    .work{position:relative;min-height:245px;overflow:hidden;background:#171717;border:1px solid var(--line)}
-    .work img{width:100%;height:100%;min-height:245px;object-fit:cover;display:block;filter:saturate(.78);transition:transform .45s}
+    .work{position:relative;aspect-ratio:4/3;min-height:0;overflow:hidden;background:#171717;border:1px solid var(--line)}
+    .work img{width:100%;height:100%;min-height:0;object-fit:cover;display:block;filter:saturate(.78);transition:transform .45s}
     .work:hover img{transform:scale(1.05)}
     .work-label{position:absolute;inset:auto 0 0;padding:35px 17px 15px;background:linear-gradient(transparent,rgba(0,0,0,.85));font-size:13px;font-weight:600}
     .work[hidden]{display:none}
@@ -107,10 +111,10 @@
     [dir="rtl"] .hero h1,[dir="rtl"] h2,[dir="rtl"] h3{letter-spacing:0}
     @media(max-width:850px){
       .menu{display:block}.nav-right{gap:12px}.links{display:none;position:absolute;top:76px;left:0;right:0;background:#101010;padding:22px 5%;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}
-      .links.open{display:flex}.about-grid,.contact-grid{grid-template-columns:1fr;gap:35px}.service-list{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}
+      .links.open{display:flex}.about-grid,.contact-grid{grid-template-columns:1fr;gap:35px}.about-copy{max-width:100%;text-align:center}.service-list{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}
     }
     @media(max-width:560px){
-      section{padding:72px 0}.hero{min-height:auto;padding:140px 0 65px}.hero h1{letter-spacing:-2px}.hero-tags{gap:12px;margin-top:50px}.service-list,.gallery{grid-template-columns:1fr 1fr}.work,.work img{min-height:180px}.portfolio-top{display:block}.steps{grid-template-columns:1fr 1fr}.about-visual{min-height:240px}
+      section{padding:72px 0}.hero{min-height:auto;padding:140px 0 65px}.hero h1{letter-spacing:-2px}.hero-tags{gap:12px;margin-top:50px}.service-list,.gallery{grid-template-columns:1fr 1fr}.work,.work img{min-height:0}.portfolio-top{display:block}.steps{grid-template-columns:1fr 1fr}.about-visual{min-height:240px}
     }
     @media(max-width:380px){.service-list,.gallery{grid-template-columns:1fr}}
   </style>
@@ -160,7 +164,6 @@
         <p data-i18n="aboutP3">Our philosophy is simple: creativity, precision and excellence in every detail.</p>
         <a class="btn" href="#contact" data-i18n="aboutButton">Work With Us</a>
       </div>
-      <div class="about-visual"><div class="about-mark"><strong>PRINTWORX<span>CY</span></strong><i></i><small>Creative Design Studio</small></div></div>
     </div>
   </section>
 
@@ -204,6 +207,7 @@
         <button class="filter" data-filter="graphic" data-i18n="graphic">Graphic Design</button>
         <button class="filter" data-filter="social" data-i18n="social">Social Media</button>
         <button class="filter" data-filter="packaging" data-i18n="packaging">Packaging</button>
+        <button class="filter" data-filter="advertising" data-i18n="advertising">Digital Advertising</button>
       </div>
       <div class="gallery">
         <article class="work" data-category="branding"><img loading="lazy" src="aurevo%20design%20studio.png" alt="Logo Design"><div class="work-label" data-i18n="work1">Logo Design</div></article>
@@ -211,9 +215,8 @@
         <article class="work" data-category="graphic"><img loading="lazy" src="graphic%20design.png" alt="Graphic Design"><div class="work-label" data-i18n="work3">Graphic Design</div></article>
         <article class="work" data-category="social"><img loading="lazy" src="social%20media%20design.png" alt="Social Media Design"><div class="work-label" data-i18n="work4">Social Media Design</div></article>
         <article class="work" data-category="packaging"><img loading="lazy" src="packing%20design.png" alt="Packaging Design"><div class="work-label" data-i18n="work5">Packaging Design</div></article>
-        <article class="work" data-category="graphic"><img loading="lazy" src="digital%20advertising.png" alt="Digital Advertising"><div class="work-label" data-i18n="work6">Digital Advertising</div></article>
+        <article class="work" data-category="advertising"><img loading="lazy" src="digital%20advertising.png" alt="Digital Advertising"><div class="work-label" data-i18n="work6">Digital Advertising</div></article>
       </div>
-      <p class="portfolio-note" data-i18n="portfolioNote">Images are visual inspiration placeholders, not representations of completed client projects. Replace them with your own approved work.</p>
     </div>
   </section>
 
@@ -274,7 +277,7 @@ heroEyebrow:"Independent Creative Design Studio",heroTitle:'Ideas into<br><span>
 aboutEyebrow:"About PRINTWORXCY",aboutTitle:'Creative thinking.<br><span class="gold">Distinctive design.</span>',aboutP1:"At PRINTWORXCY, we believe every great brand begins with a vision.",aboutP2:"We are a creative design studio that transforms ideas into distinctive visual identities. From logo design and brand identity to graphic design and digital creativity, we create thoughtful solutions that help businesses stand out.",aboutP3:"Our philosophy is simple: creativity, precision and excellence in every detail.",aboutButton:"Work With Us",
 servicesEyebrow:"What We Do",servicesTitle:'Creative services.<br><span class="gold">Made to stand out.</span>',servicesIntro:"Focused creative services for brands with ambition.",s1:"Logo Design",sd1:"Memorable logos built around your vision.",s2:"Brand Identity",sd2:"A consistent look and feel for your brand.",s3:"Graphic Design",sd3:"Clear, considered and impactful design.",s4:"Social Media Design",sd4:"Creative content for your social channels.",s5:"Packaging Design",sd5:"Distinctive packaging and product visuals.",s6:"Digital Advertising",sd6:"Visual assets for digital campaigns.",
 quote:"“Great design is not just how a brand looks. It is how it is remembered.”",quoteCaption:"PRINTWORXCY — Beyond Design. Beyond Expectations.",
-portfolioEyebrow:"Selected Work",portfolioTitle:'A closer look at<br><span class="gold">creative possibilities.</span>',portfolioIntro:"Explore creative directions across our design services.",all:"All",branding:"Branding",graphic:"Graphic Design",social:"Social Media",packaging:"Packaging",work1:"Logo Design",work2:"Brand Identity",work3:"Graphic Design",work4:"Social Media Design",work5:"Packaging Design",work6:"Digital Advertising",portfolioNote:"Images are visual inspiration placeholders, not representations of completed client projects. Replace them with your own approved work.",
+portfolioEyebrow:"Selected Work",portfolioTitle:'A closer look at<br><span class="gold">creative possibilities.</span>',portfolioIntro:"Explore creative directions across our design services.",all:"All",branding:"Branding",graphic:"Graphic Design",social:"Social Media",packaging:"Packaging",advertising:"Digital Advertising",work1:"Logo Design",work2:"Brand Identity",work3:"Graphic Design",work4:"Social Media Design",work5:"Packaging Design",work6:"Digital Advertising",portfolioNote:"Images are visual inspiration placeholders, not representations of completed client projects. Replace them with your own approved work.",
 processEyebrow:"Our Approach",processTitle:'From vision to <span class="gold">visual identity.</span>',step1:"Discover",stepd1:"We learn about your business and goals.",step2:"Create",stepd2:"We develop a creative direction for your brand.",step3:"Refine",stepd3:"We refine the design with your feedback.",step4:"Deliver",stepd4:"We prepare and deliver your final designs.",
 ctaEyebrow:"Have a Project in Mind?",ctaTitle:'Let\'s create something <span class="gold">remarkable.</span>',ctaText:"Tell us about your vision. We would love to hear about your next project.",ctaButton:"Let's Talk",
 contactEyebrow:"Get In Touch",contactTitle:'Let\'s start a <span class="gold">conversation.</span>',contactText:"Have a project or an idea? Send us a message and let's discuss it.",availabilityLabel:"Availability",availability:"Available for projects worldwide",namePlaceholder:"Your Name",emailPlaceholder:"Your Email",subjectPlaceholder:"Project / Subject",messagePlaceholder:"Tell us about your project...",send:"Send Enquiry",rights:"All rights reserved."
@@ -285,7 +288,7 @@ heroEyebrow:"Ανεξάρτητο δημιουργικό στούντιο σχε
 aboutEyebrow:"Σχετικά με την PRINTWORXCY",aboutTitle:'Δημιουργική σκέψη.<br><span class="gold">Ξεχωριστός σχεδιασμός.</span>',aboutP1:"Στην PRINTWORXCY πιστεύουμε ότι κάθε σπουδαίο brand ξεκινά από ένα όραμα.",aboutP2:"Είμαστε ένα δημιουργικό στούντιο σχεδιασμού που μετατρέπει ιδέες σε ξεχωριστές οπτικές ταυτότητες. Από τον σχεδιασμό λογοτύπου και την εταιρική ταυτότητα μέχρι τον γραφιστικό σχεδιασμό και τις ψηφιακές δημιουργίες, προσφέρουμε λύσεις που βοηθούν τις επιχειρήσεις να ξεχωρίσουν.",aboutP3:"Η φιλοσοφία μας είναι απλή: δημιουργικότητα, ακρίβεια και ποιότητα σε κάθε λεπτομέρεια.",aboutButton:"Συνεργαστείτε μαζί μας",
 servicesEyebrow:"Τι προσφέρουμε",servicesTitle:'Δημιουργικές υπηρεσίες.<br><span class="gold">Με χαρακτήρα.</span>',servicesIntro:"Στοχευμένες δημιουργικές υπηρεσίες για brands με φιλοδοξίες.",s1:"Σχεδιασμός Λογοτύπου",sd1:"Ξεχωριστά λογότυπα βασισμένα στο όραμά σας.",s2:"Εταιρική Ταυτότητα",sd2:"Ενιαία εικόνα και χαρακτήρας για το brand σας.",s3:"Γραφιστικός Σχεδιασμός",sd3:"Καθαρός, προσεγμένος και δυναμικός σχεδιασμός.",s4:"Σχεδιασμός Social Media",sd4:"Δημιουργικό περιεχόμενο για τα κοινωνικά δίκτυα.",s5:"Σχεδιασμός Συσκευασίας",sd5:"Ξεχωριστές συσκευασίες και εικόνες προϊόντων.",s6:"Ψηφιακή Διαφήμιση",sd6:"Οπτικό υλικό για ψηφιακές καμπάνιες.",
 quote:"«Ο καλός σχεδιασμός δεν αφορά μόνο την εικόνα ενός brand. Αφορά το πώς μένει στη μνήμη.»",quoteCaption:"PRINTWORXCY — Πέρα από τον σχεδιασμό. Πέρα από τις προσδοκίες.",
-portfolioEyebrow:"Επιλεγμένες δημιουργίες",portfolioTitle:'Μια ματιά στις<br><span class="gold">δημιουργικές δυνατότητες.</span>',portfolioIntro:"Εξερευνήστε δημιουργικές προσεγγίσεις στις υπηρεσίες σχεδιασμού μας.",all:"Όλα",branding:"Branding",graphic:"Γραφιστική",social:"Social Media",packaging:"Συσκευασία",work1:"Σχεδιασμός Λογοτύπου",work2:"Εταιρική Ταυτότητα",work3:"Γραφιστικός Σχεδιασμός",work4:"Σχεδιασμός Social Media",work5:"Σχεδιασμός Συσκευασίας",work6:"Ψηφιακή Διαφήμιση",portfolioNote:"Οι εικόνες είναι ενδεικτική έμπνευση και όχι ολοκληρωμένα έργα πελατών. Αντικαταστήστε τες με δικές σας εγκεκριμένες δουλειές.",
+portfolioEyebrow:"Επιλεγμένες δημιουργίες",portfolioTitle:'Μια ματιά στις<br><span class="gold">δημιουργικές δυνατότητες.</span>',portfolioIntro:"Εξερευνήστε δημιουργικές προσεγγίσεις στις υπηρεσίες σχεδιασμού μας.",all:"Όλα",branding:"Branding",graphic:"Γραφιστική",social:"Social Media",packaging:"Συσκευασία",advertising:"Ψηφιακή Διαφήμιση",work1:"Σχεδιασμός Λογοτύπου",work2:"Εταιρική Ταυτότητα",work3:"Γραφιστικός Σχεδιασμός",work4:"Σχεδιασμός Social Media",work5:"Σχεδιασμός Συσκευασίας",work6:"Ψηφιακή Διαφήμιση",portfolioNote:"Οι εικόνες είναι ενδεικτική έμπνευση και όχι ολοκληρωμένα έργα πελατών. Αντικαταστήστε τες με δικές σας εγκεκριμένες δουλειές.",
 processEyebrow:"Η προσέγγισή μας",processTitle:'Από το όραμα στην <span class="gold">οπτική ταυτότητα.</span>',step1:"Ανακαλύπτουμε",stepd1:"Μαθαίνουμε την επιχείρηση και τους στόχους σας.",step2:"Δημιουργούμε",stepd2:"Αναπτύσσουμε τη δημιουργική κατεύθυνση του brand σας.",step3:"Βελτιώνουμε",stepd3:"Τελειοποιούμε τον σχεδιασμό με βάση τα σχόλιά σας.",step4:"Παραδίδουμε",stepd4:"Ετοιμάζουμε και παραδίδουμε τα τελικά σχέδια.",
 ctaEyebrow:"Έχετε κάποιο project;",ctaTitle:'Ας δημιουργήσουμε κάτι <span class="gold">ξεχωριστό.</span>',ctaText:"Πείτε μας το όραμά σας. Θα χαρούμε να ακούσουμε την επόμενη ιδέα σας.",ctaButton:"Επικοινωνήστε μαζί μας",
 contactEyebrow:"Επικοινωνία",contactTitle:'Ας ξεκινήσουμε μια <span class="gold">συζήτηση.</span>',contactText:"Έχετε ένα project ή μια ιδέα; Στείλτε μας μήνυμα για να το συζητήσουμε.",availabilityLabel:"Διαθεσιμότητα",availability:"Αναλαμβάνουμε projects παγκοσμίως",namePlaceholder:"Το όνομά σας",emailPlaceholder:"Το email σας",subjectPlaceholder:"Project / Θέμα",messagePlaceholder:"Πείτε μας για το project σας...",send:"Αποστολή αιτήματος",rights:"Με επιφύλαξη παντός δικαιώματος."
